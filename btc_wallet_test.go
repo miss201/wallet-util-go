@@ -7,25 +7,32 @@ import (
 
 func TestBTCGenerateAddressFromMnemonic(t *testing.T) {
 
-	mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
+	//mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
+	mnemonic, _ := common.BTCW.GenerateMnemonic(12)
 
 	BTCAddress, err := BTCW.GenerateAddressFromMnemonic(mnemonic, common.English)
-	BTCAddressSegwit, err := BTCSegwitW.GenerateAddressFromMnemonic(mnemonic, common.English)
-	BTCAddressTestnet, err := BTCTestnetW.GenerateAddressFromMnemonic(mnemonic, common.English)
-	BTCAddressTestnetSegwit, err := BTCTestnetSegwitW.GenerateAddressFromMnemonic(mnemonic, common.English)
+	//BTCAddressSegwit, err := BTCSegwitW.GenerateAddressFromMnemonic(mnemonic, common.English)
+	//BTCAddressTestnet, err := BTCTestnetW.GenerateAddressFromMnemonic(mnemonic, common.English)
+	//BTCAddressTestnetSegwit, err := BTCTestnetSegwitW.GenerateAddressFromMnemonic(mnemonic, common.English)
+
+	BTCPrivateKey, err := BTCW.ExportPrivateKeyFromMnemonic(mnemonic, common.English)
+	BTCPublicKey, err := BTCW.GetPubKeyFromPrivateKey(BTCPrivateKey)
 
 	if err != nil {
 		t.Errorf("Failed to TestBTCGenerateAddressFromMnemonic: %v", err)
 	}
-
+	t.Log("btcw mnemonic, mnemonic=", mnemonic)
 	//1AG89FCfPQvtVa7DSCUJjEagH13uTs28Zs
 	t.Log("TestImportWalletFromMnemonic , BTCAddress=", BTCAddress)
-	//3Ku5bUrN1gXM4fH8WVyRHbKkyGyydqJZ6F
-	t.Log("TestImportWalletFromMnemonic , BTCAddressSegwit=", BTCAddressSegwit)
-	//mxeBxFWLFAY3G1RKijr91B3kzsX2mTvnYv
-	t.Log("TestImportWalletFromMnemonic , BTCAddressTestnet=", BTCAddressTestnet)
-	//2MsNRcbHbMgwbbkfzx86Z4FdHkRp29NPjmD
-	t.Log("TestImportWalletFromMnemonic , BTCAddressTestnetSegwit=", BTCAddressTestnetSegwit)
+	t.Log("privateKey=,", BTCPrivateKey)
+	t.Log("publicKey=,", BTCPublicKey)
+	////3Ku5bUrN1gXM4fH8WVyRHbKkyGyydqJZ6F
+	//t.Log("TestImportWalletFromMnemonic , BTCAddressSegwit=", BTCAddressSegwit)
+	////mxeBxFWLFAY3G1RKijr91B3kzsX2mTvnYv
+	//t.Log("TestImportWalletFromMnemonic , BTCAddressTestnet=", BTCAddressTestnet)
+	////2MsNRcbHbMgwbbkfzx86Z4FdHkRp29NPjmD
+	//t.Log("TestImportWalletFromMnemonic , BTCAddressTestnetSegwit=", BTCAddressTestnetSegwit)
+
 }
 
 func TestBTCGenerateAddressFromPrivateKey(t *testing.T) {

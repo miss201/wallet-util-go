@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
-	wicc_common "github.com/miss201/wallet-util-go/common"
+	w_common "github.com/miss201/wallet-util-go/common"
 	"github.com/miss201/wallet-util-go/common/ec"
 )
 
@@ -23,7 +23,7 @@ func init() {
 
 //ETHWallet
 type ETHWallet struct {
-	wallet      *wicc_common.Wallet
+	wallet      *w_common.Wallet
 	mnemonicLen int
 }
 
@@ -33,17 +33,17 @@ func NewETHWallet(wc string) *ETHWallet {
 	switch wc {
 	case ETH:
 		newWallet = ETHWallet{
-			wallet:      wicc_common.NewWallet(wicc_common.ETH, false, false, nil),
+			wallet:      w_common.NewWallet(w_common.ETH, false, false, nil),
 			mnemonicLen: 12,
 		}
 	case ETHLedger:
 		newWallet = ETHWallet{
-			wallet:      wicc_common.NewWallet(wicc_common.ETH, false, false, nil),
+			wallet:      w_common.NewWallet(w_common.ETH, false, false, nil),
 			mnemonicLen: 12,
 		}
 	default:
 		newWallet = ETHWallet{
-			wallet:      wicc_common.NewWallet(wicc_common.ETH, false, false, nil),
+			wallet:      w_common.NewWallet(w_common.ETH, false, false, nil),
 			mnemonicLen: 12,
 		}
 	}
@@ -79,30 +79,30 @@ func (ETHw *ETHWallet) ExportPrivateKeyFromMnemonic(mnemonic, language string) (
 
 func (ETHw *ETHWallet) CheckAddress(address string) (bool, error) {
 	//去掉0x（如有）
-	rm0xaddr := wicc_common.RemoveOxFromHex(address)
+	rm0xaddr := w_common.RemoveOxFromHex(address)
 	//判断长度
-	if len(rm0xaddr) != wicc_common.ETHADDRESSLEN {
-		return false, wicc_common.ERR_ADDRESS_LEN
+	if len(rm0xaddr) != w_common.ETHADDRESSLEN {
+		return false, w_common.ERR_ADDRESS_LEN
 	}
 	//判断stringTohex是否成功
 	_, err := hex.DecodeString(rm0xaddr)
 	if err != nil {
-		return false, wicc_common.ERR_INVALID_ADDRESS
+		return false, w_common.ERR_INVALID_ADDRESS
 	}
 	return true, nil
 }
 
 func (ETHw *ETHWallet) CheckPrivateKey(privateKey string) (bool, error) {
 	//去掉0x（如有）
-	rm0xaddr := wicc_common.RemoveOxFromHex(privateKey)
+	rm0xaddr := w_common.RemoveOxFromHex(privateKey)
 	//判断长度
-	if len(rm0xaddr) != wicc_common.ETHPRIVATEKEYLEN {
-		return false, wicc_common.ERR_INVALID_PRIVATEKEY_LEN
+	if len(rm0xaddr) != w_common.ETHPRIVATEKEYLEN {
+		return false, w_common.ERR_INVALID_PRIVATEKEY_LEN
 	}
 	//判断stringTohex是否成功
 	_, err := hex.DecodeString(rm0xaddr)
 	if err != nil {
-		return false, wicc_common.ERR_INVALID_PRIVATEKEY
+		return false, w_common.ERR_INVALID_PRIVATEKEY
 	}
 	return true, nil
 }
