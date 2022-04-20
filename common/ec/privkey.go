@@ -2,8 +2,8 @@
 package ec
 
 import (
-	"math/big"
 	"github.com/miss201/wallet-util-go/common/bytes"
+	"math/big"
 )
 
 const PrivKeyBytesLen = 32

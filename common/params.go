@@ -54,13 +54,4 @@ func init() {
 	USDTParams.ScriptHashAddrID = 0x05 // 5
 	USDTParams.PrivateKeyID = 0x80     // 128
 
-	// wicc mainnet params
-	WICCParams.PubKeyHashAddrID = 0x49
-	WICCParams.ScriptHashAddrID = 0x05 // 1
-	WICCParams.PrivateKeyID = 0x99     // 128*/
-
-	// wicc testnet params
-	WICCTestnetParams.PubKeyHashAddrID = 0x87 // 1
-	WICCTestnetParams.ScriptHashAddrID = 0x05
-	WICCTestnetParams.PrivateKeyID = 0xd2 // 128*/
 }
