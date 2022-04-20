@@ -19,6 +19,8 @@ var (
 	BTCTestnetSegwitW *Wallet
 	ETHW              *Wallet
 	ETHLedgerW        *Wallet
+
+	BSCW *Wallet
 )
 
 func init() {
@@ -28,6 +30,8 @@ func init() {
 	BTCTestnetSegwitW = NewWallet(hdwallet.BTC_TESTNET, true, false, &hdwallet.BTCTestnetParams)
 	ETHW = NewWallet(hdwallet.ETH, false, false, nil)
 	ETHLedgerW = NewWallet(hdwallet.ETH, false, true, nil)
+
+	BSCW = NewWallet(hdwallet.BSC, false, false, nil)
 }
 
 type Wallet struct {

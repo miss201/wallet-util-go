@@ -121,6 +121,10 @@ func TestImportMnemonicCreateMultiWallet1(t *testing.T) {
 	wallet, _ = master.GetWallet(hdwallet.CoinType(hdwallet.ETC))
 	address, _ = wallet.GetAddress()
 	fmt.Println("ETC: ", address)
+
+	wallet, _ = master.GetWallet(hdwallet.CoinType(hdwallet.BSC))
+	address, _ = wallet.GetAddress()
+	fmt.Println("BSC:", address)
 }
 
 func TestGenerateAddressFromMnemonic(t *testing.T) {
