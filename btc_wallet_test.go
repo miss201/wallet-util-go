@@ -1,4 +1,4 @@
-package wicc_wallet_utils_go
+package wallet_util_go
 
 import (
 	"github.com/miss201/wallet-util-go/common"
