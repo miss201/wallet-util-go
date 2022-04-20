@@ -6,9 +6,7 @@ import (
 )
 
 func TestMATICGenerateAddressFromMnemonic(t *testing.T) {
-
 	mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
-
 	MATICAddress, err := MATICW.GenerateAddressFromMnemonic(mnemonic, common.English)
 	if err != nil {
 		t.Errorf("Failed to TestGenerateAddressFromMnemonic: %v", err)

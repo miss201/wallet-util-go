@@ -2,8 +2,10 @@ package wallet_util_go
 
 import (
 	"encoding/hex"
+	"fmt"
 	"github.com/btcsuite/btcutil"
 	"github.com/miss201/wallet-util-go/common"
+	"log"
 )
 
 var (
@@ -81,4 +83,60 @@ func (BTCw *BTCWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 	}
 	pubHex := hex.EncodeToString(wifKey.SerializePubKey())
 	return pubHex, nil
+}
+
+func (BTCw *BTCWallet) createAccount() *multiplyAccount {
+	menmonic, err := BTCW.wallet.GenerateMnemonic(12)
+	privateKey, err := BTCW.ExportPrivateKeyFromMnemonic(menmonic, common.English)
+	publicKey, err := BTCW.GetPubKeyFromPrivateKey(privateKey)
+	address, err := BTCW.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+		Mnemonic:   menmonic,
+	}
+}
+
+func (BTCw *BTCWallet) createAccountByMenmonic(menmonic string) *multiplyAccount {
+	privateKey, err := BTCw.ExportPrivateKeyFromMnemonic(menmonic, common.English)
+	publicKey, err := BTCw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := BTCw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+		Mnemonic:   menmonic,
+	}
+}
+
+func (BTCw *BTCWallet) createAccountByPrivateKey(privateKey string) *multiplyAccount {
+	publicKey, err := BTCw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := BTCw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过私钥获取账号信息出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+	}
 }

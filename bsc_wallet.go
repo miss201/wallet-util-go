@@ -2,10 +2,12 @@ package wallet_util_go
 
 import (
 	"encoding/hex"
+	"fmt"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	w_common "github.com/miss201/wallet-util-go/common"
 	"github.com/miss201/wallet-util-go/common/ec"
+	"log"
 )
 
 var (
@@ -25,7 +27,6 @@ type BSCWallet struct {
 }
 
 func NewBSCWallet(wc string) *BSCWallet {
-
 	newWallet := BSCWallet{}
 	switch wc {
 	case BSC:
@@ -47,7 +48,6 @@ func (BSCw *BSCWallet) GenerateAddressFromMnemonic(mnemonic, language string) (s
 }
 
 func (BSCw *BSCWallet) GenerateAddressFromPrivateKey(privateKey string) (string, error) {
-
 	privateKeyBytes, _ := hex.DecodeString(privateKey)
 	// (1) new  *PrivateKey、 *PublicKey
 	_, publicKey := ec.PrivKeyFromBytes(privateKeyBytes)
@@ -99,4 +99,60 @@ func (BSCw *BSCWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 	}
 	//publicKey Compressed 33 bytes
 	return hex.EncodeToString(publicKey.SerializeCompressed()), nil
+}
+
+func (BSCw *BSCWallet) createAccount() *multiplyAccount {
+	menmonic, err := BSCw.wallet.GenerateMnemonic(12)
+	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+		Mnemonic:   menmonic,
+	}
+}
+
+func (BSCw *BSCWallet) createAccountByMenmonic(menmonic string) *multiplyAccount {
+	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+		Mnemonic:   menmonic,
+	}
+}
+
+func (BSCw *BSCWallet) createAccountByPrivateKey(privateKey string) *multiplyAccount {
+	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过私钥获取账号信息出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+	}
 }

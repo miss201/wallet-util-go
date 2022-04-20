@@ -8,10 +8,12 @@ package wallet_util_go
 
 import (
 	"encoding/hex"
+	"fmt"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	w_common "github.com/miss201/wallet-util-go/common"
 	"github.com/miss201/wallet-util-go/common/ec"
+	"log"
 )
 
 var (
@@ -30,7 +32,6 @@ type MATICWallet struct {
 }
 
 func NewMATICWallet(wc string) *MATICWallet {
-
 	newWallet := MATICWallet{}
 	switch wc {
 	case MATIC:
@@ -52,7 +53,6 @@ func (MATICw *MATICWallet) GenerateAddressFromMnemonic(mnemonic, language string
 }
 
 func (MATICw *MATICWallet) GenerateAddressFromPrivateKey(privateKey string) (string, error) {
-
 	privateKeyBytes, _ := hex.DecodeString(privateKey)
 	// (1) new  *PrivateKey、 *PublicKey
 	_, publicKey := ec.PrivKeyFromBytes(privateKeyBytes)
@@ -90,7 +90,6 @@ func (MATICw *MATICWallet) CheckPrivateKey(privateKey string) (bool, error) {
 }
 
 func (MATICw *MATICWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error) {
-
 	isValid, err := MATICw.CheckPrivateKey(privateKey)
 	if isValid == false || err != nil {
 		return "", err
@@ -104,4 +103,60 @@ func (MATICw *MATICWallet) GetPubKeyFromPrivateKey(privateKey string) (string, e
 	}
 	//publicKey Compressed 33 bytes
 	return hex.EncodeToString(publicKey.SerializeCompressed()), nil
+}
+
+func (MATICw *MATICWallet) createAccount() *multiplyAccount {
+	menmonic, err := MATICw.wallet.GenerateMnemonic(12)
+	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+		Mnemonic:   menmonic,
+	}
+}
+
+func (MATICw *MATICWallet) createAccountByMenmonic(menmonic string) *multiplyAccount {
+	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+		Mnemonic:   menmonic,
+	}
+}
+
+func (MATICw *MATICWallet) createAccountByPrivateKey(privateKey string) *multiplyAccount {
+	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
+	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过私钥获取账号信息出错：%v\n", err)
+		return &multiplyAccount{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
+		}
+	}
+	return &multiplyAccount{
+		Address:    address,
+		PrivateKey: privateKey,
+		PublicKey:  publicKey,
+	}
 }
