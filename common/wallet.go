@@ -2,12 +2,12 @@ package common
 
 import (
 	"errors"
-	"github.com/JKinGH/go-hdwallet"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcutil"
 	"github.com/btcsuite/btcutil/base58"
 	"github.com/miss201/wallet-util-go/common/ec"
+	"github.com/miss201/wallet-util-go/go-hdwallet"
 	"github.com/tyler-smith/go-bip39"
 	"strings"
 )
@@ -19,7 +19,6 @@ var (
 	BTCTestnetSegwitW *Wallet
 	ETHW              *Wallet
 	ETHLedgerW        *Wallet
-	WICCW             *Wallet
 )
 
 func init() {

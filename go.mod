@@ -12,11 +12,10 @@ replace (
 )
 
 require (
-	github.com/JKinGH/go-hdwallet v0.0.0-20200117082521-b9fec2768008
 	github.com/btcsuite/btcd v0.20.1-beta
 	github.com/btcsuite/btcutil v1.0.1
-	github.com/cpacia/bchutil v0.0.0-20181003130114-b126f6a35b6c // indirect
+	github.com/cpacia/bchutil v0.0.0-20181003130114-b126f6a35b6c
 	github.com/ethereum/go-ethereum v1.9.10
-	github.com/tyler-smith/go-bip39 v1.0.2 // indirect
+	github.com/tyler-smith/go-bip39 v1.0.2
 	golang.org/x/crypto v0.0.0-20200115085410-6d4e4cb37c7d
 )

@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f03e598a-4f14-4ae5-a0ea-ce1922f218e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/btc_wallet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/btc_wallet_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/base58/alphabet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/base58/base58.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/base58/base58check.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/bytes/bytes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/ec/address.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/ec/privkey.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/ec/pubkey.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/ec/secp256k1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/enum.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/error.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/hash/hash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/hash/hash_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/params.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/utils.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/wallet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/wallet_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eth_wallet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eth_wallet_test.go" afterDir="false" />
+    <list default="true" id="f03e598a-4f14-4ae5-a0ea-ce1922f218e9" name="Default Changelist" comment="btc eth">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/wallet.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/wallet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/wallet_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/wallet_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,59 +19,54 @@
     <session id="-880838876">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="1" />
-          <entry key="go" value="19" />
-          <entry key="mod" value="1" />
-          <entry key="sum" value="1" />
+          <entry key="gitignore" value="2" />
+          <entry key="go" value="197" />
+          <entry key="mod" value="3" />
+          <entry key="sum" value="2" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="DTD" value="1" />
-          <entry key="Git file" value="1" />
-          <entry key="Go" value="19" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="DTD" value="3" />
+          <entry key="Git file" value="2" />
+          <entry key="Go" value="197" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="38" />
+          <entry key="go" value="1229" />
           <entry key="mod" value="7" />
+          <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DTD" value="7" />
-          <entry key="Go" value="38" />
+          <entry key="Go" value="1229" />
+          <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/error.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/params.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/utils.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <folding>
-                <element signature="e#16#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="448">
+              <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -94,19 +74,63 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/wallet.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="-324">
+              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
               <folding>
-                <element signature="e#16#305#0" expanded="true" />
+                <element signature="e#16#314#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/ec/privkey.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#39#111#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/ec/pubkey.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/ec/secp256k1.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eth_wallet.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <folding>
+                <element signature="e#24#234#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go-hdwallet/.idea/vcs.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common/wallet_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="328">
+              <caret line="286" selection-start-line="286" selection-end-line="286" />
               <folding>
                 <element signature="e#16#93#0" expanded="true" />
               </folding>
@@ -115,12 +139,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/btc_wallet.go">
+        <entry file="file://$PROJECT_DIR$/eth_wallet_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="242">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding>
-                <element signature="e#30#140#0" expanded="true" />
+                <element signature="e#24#89#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,43 +153,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/btc_wallet_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+            <state relative-caret-position="286">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eth_wallet.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eth_wallet_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go.sum">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>WaykiChain/wicc-wallet-utils-go</find>
+      <find>wallet_common</find>
+      <find>wicc_common</find>
+      <find>GenerateMnemonic</find>
+      <find>ETH</find>
+      <find>common.ET</find>
+      <find>wicc_wallet_utils_go</find>
+      <find>BES</find>
+      <find>BTCW</find>
+      <find>NewBSCCWallet</find>
+      <find>ETHToken</find>
+      <find>ETHADDRESSLEN</find>
+      <find>fmt.Println</find>
+      <find>hdwallet</find>
+      <find>eth</find>
+      <find>unknow coin type</find>
+      <find>ErrCoinTypeUnknow</find>
+      <find>newETC</find>
+      <find>coins[ETH]</find>
+      <find>coins</find>
+      <find>BSCParams</find>
+      <find>NewBSCWallet</find>
+      <find>NewETHWallet</find>
+      <find>go-hdwallet</find>
+      <find>github.com/JKinGH/go-hdwallet</find>
     </findStrings>
     <replaceStrings>
       <replace>miss201/wallet-util-go</replace>
+      <replace>common</replace>
+      <replace>w_common</replace>
+      <replace>wallet_util_go</replace>
+      <replace>BSC</replace>
+      <replace>github.com/miss201/wallet-util-go/go-hdwallet</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="C:/Program Files/Go" />
@@ -175,12 +212,27 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/ec/address.go" />
         <option value="$PROJECT_DIR$/go.mod" />
-        <option value="$PROJECT_DIR$/btc_wallet.go" />
-        <option value="$PROJECT_DIR$/btc_wallet_test.go" />
-        <option value="$PROJECT_DIR$/eth_wallet.go" />
         <option value="$PROJECT_DIR$/eth_wallet_test.go" />
+        <option value="$PROJECT_DIR$/common/base58/alphabet.go" />
+        <option value="$PROJECT_DIR$/common/base58/base58.go" />
+        <option value="$PROJECT_DIR$/common/ec/address.go" />
+        <option value="$PROJECT_DIR$/btc_wallet_test.go" />
+        <option value="$PROJECT_DIR$/common/enum.go" />
+        <option value="$PROJECT_DIR$/btc_wallet.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/go-hdwallet/key.go" />
+        <option value="$PROJECT_DIR$/go-hdwallet/enum.go" />
+        <option value="$PROJECT_DIR$/go-hdwallet/wallet_bsc_test.go" />
+        <option value="$PROJECT_DIR$/go-hdwallet/wallet_bsc.go" />
+        <option value="$PROJECT_DIR$/eth_wallet.go" />
+        <option value="$PROJECT_DIR$/bsc_wallet_test.go" />
+        <option value="$PROJECT_DIR$/bsc_wallet.go" />
+        <option value="$PROJECT_DIR$/common/ec/privkey.go" />
+        <option value="$PROJECT_DIR$/common/ec/pubkey.go" />
+        <option value="$PROJECT_DIR$/common/params.go" />
+        <option value="$PROJECT_DIR$/common/wallet.go" />
+        <option value="$PROJECT_DIR$/common/wallet_test.go" />
       </list>
     </option>
   </component>
@@ -191,14 +243,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="516" />
-    <option name="y" value="14" />
-    <option name="width" value="2350" />
-    <option name="height" value="1602" />
+    <option name="width" value="3360" />
+    <option name="height" value="1926" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -209,6 +260,38 @@
               <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
               <item name="wallet-util-go" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wallet-util-go" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wallet-util-go" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="wallet.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
+            </path>
+            <path>
+              <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wallet-util-go" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="wallet_test.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
+            </path>
+            <path>
+              <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wallet-util-go" type="462c0819:PsiDirectoryNode" />
+              <item name="go-hdwallet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wallet-util-go" type="462c0819:PsiDirectoryNode" />
+              <item name="go-hdwallet" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wallet-util-go" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -217,12 +300,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JKinGH/go-hdwallet" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
@@ -230,6 +315,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\go\src\github.com\miss201\wallet-util-go" />
+      <recent name="D:\go\src\github.com\miss201\wallet-util-go\go-hdwallet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -244,7 +330,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestETHGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go">
+  <component name="RunManager" selected="Go Test.TestBTCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go">
+    <configuration name="TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wallet-util-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/miss201/wallet-util-go" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestBSCGenerateAddressFromMnemonic$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestBTCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="wallet-util-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -267,19 +364,74 @@
       <pattern value="^TestETHGenerateAddressFromMnemonic$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestNewBSC in github.com/miss201/wallet-util-go/go-hdwallet" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wallet-util-go" />
+      <working_directory value="$PROJECT_DIR$/go-hdwallet" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/miss201/wallet-util-go/go-hdwallet" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestNewBSC$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewBSCCWallet in github.com/miss201/wallet-util-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wallet-util-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/miss201/wallet-util-go" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestNewBSCCWallet$" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Test.TestBTCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
       <item itemvalue="Go Test.TestETHGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
+      <item itemvalue="Go Test.TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
+      <item itemvalue="Go Test.TestNewBSCCWallet in github.com/miss201/wallet-util-go" />
+      <item itemvalue="Go Test.TestNewBSC in github.com/miss201/wallet-util-go/go-hdwallet" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestETHGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
         <item itemvalue="Go Test.TestBTCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
+        <item itemvalue="Go Test.TestETHGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
+        <item itemvalue="Go Test.TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" />
+        <item itemvalue="Go Test.TestNewBSCCWallet in github.com/miss201/wallet-util-go" />
+        <item itemvalue="Go Test.TestNewBSC in github.com/miss201/wallet-util-go/go-hdwallet" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestBTCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.19 at 18h 37m 38s.xml">
+    <history-entry file="TestNewBSCCWallet_in_github_com_miss201_wallet-util-go - 2022.04.20 at 12h 45m 03s.xml">
+      <configuration name="TestNewBSCCWallet in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBSCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 12h 45m 21s.xml">
+      <configuration name="TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBSCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 12h 45m 51s.xml">
+      <configuration name="TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBSCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 12h 47m 31s.xml">
+      <configuration name="TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBSCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 12h 47m 42s.xml">
+      <configuration name="TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBSCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 12h 48m 23s.xml">
+      <configuration name="TestBSCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestETHGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 13h 33m 46s.xml">
+      <configuration name="TestETHGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBTCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 13h 34m 03s.xml">
+      <configuration name="TestBTCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestETHGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 13h 34m 44s.xml">
+      <configuration name="TestETHGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestBTCGenerateAddressFromMnemonic_in_github_com_miss201_wallet-util-go - 2022.04.20 at 13h 34m 56s.xml">
       <configuration name="TestBTCGenerateAddressFromMnemonic in github.com/miss201/wallet-util-go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
@@ -287,20 +439,20 @@
     <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="842" y="60" width="262" height="921" id="Project" order="0" sideWeight="0.49788135" visible="true" weight="0.3293382" />
+      <window_info content_ui="combo" x="842" y="60" width="262" height="921" id="Project" order="0" sideWeight="0.49788135" visible="true" weight="0.3293382" />
       <window_info id="Structure" order="1" sideWeight="0.50211865" side_tool="true" weight="0.13226667" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.68112797" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973333" visible="true" weight="0.5191147" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973333" weight="0.34406438" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.35613462" />
       <window_info anchor="bottom" id="Code Review" order="7" sideWeight="0.49973333" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" sideWeight="0.4992" weight="0.3189135" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49813333" weight="0.33199194" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4992" weight="0.3189135" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49813333" visible="true" weight="0.33199194" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50186664" side_tool="true" weight="0.8110749" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -315,53 +467,31 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="btc eth" />
+    <option name="LAST_COMMIT_MESSAGE" value="btc eth" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>https://goproxy.io</proxy>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/ec/pubkey.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/base58/base58.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/common/base58/base58check.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#46#73#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="316">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/bytes/bytes.go">
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/btcsuite/btcd@v0.20.1-beta/chaincfg/params.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#45#77#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="22">
+          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/ec/address.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding>
-            <element signature="e#44#158#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/hash/hash.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/hash/hash_test.go">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor">
@@ -370,77 +500,292 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/base58/alphabet.go">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/enum.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/error.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/params.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/utils.go">
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/enum.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <folding>
-            <element signature="e#16#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/wallet.go">
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/params.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/bytes/bytes.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/key.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#16#305#0" expanded="true" />
-          </folding>
+          <caret line="134" column="18" lean-forward="true" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/wallet_test.go">
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/wallet_bch.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/wallet_btc.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/wallet_btc_testnet.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/wallet_dash.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/mnemonic.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#16#93#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-58">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/wallet_etc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/!j!kin!g!h/go-hdwallet@v0.0.0-20200117082521-b9fec2768008/wallet.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_ltc.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_wicc.go" />
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_wicc_testnet.go" />
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/mnemonic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-652" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/params.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/option.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_qtum.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_eth.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_btc_testnet.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_etc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/btc_wallet.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        <state relative-caret-position="22">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding>
-            <element signature="e#30#140#0" expanded="true" />
+            <element signature="e#24#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go.sum">
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_btc.go">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_bsc_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/errors.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/enum.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/error.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="16" column="75" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/utils.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_bch.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/key.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="129" column="14" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/wallet_bsc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="e#18#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/enum.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsc_wallet_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="e#92#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsc_wallet.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/ec/address.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#44#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/ec/privkey.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#39#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/ec/pubkey.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/ec/secp256k1.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/params.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eth_wallet_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="e#24#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/btc_wallet_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        <state relative-caret-position="286">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eth_wallet.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="e#24#234#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eth_wallet_test.go">
+    <entry file="file://$PROJECT_DIR$/go-hdwallet/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        <state relative-caret-position="110">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/wallet.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#16#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/wallet_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="286" selection-start-line="286" selection-end-line="286" />
+          <folding>
+            <element signature="e#16#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
