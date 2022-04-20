@@ -7,7 +7,8 @@ import (
 
 func TestETHGenerateAddressFromMnemonic(t *testing.T) {
 
-	mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
+	//mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
+	mnemonic := "tail merge cousin betray engage yard slab tube hobby shove settle legal"
 
 	ETHAddress, err := ETHW.GenerateAddressFromMnemonic(mnemonic, common.English)
 	if err != nil {
@@ -18,17 +19,17 @@ func TestETHGenerateAddressFromMnemonic(t *testing.T) {
 		t.Errorf("Failed to TestGenerateAddressFromMnemonic: %v", err)
 	}
 
-	//0x81FD1F7aE91041aAc5fCF7d8Ed3e1dd88Cc1359a
+	//0x4fB085B8478584B10aF0b1b7401c6DcE38bFcA7d
 	t.Log("TestImportWalletFromMnemonic , ETHAddress=", ETHAddress)
-	//0x791893c14f0a8dCa4ADB0A8297F8d12063865cd2
+	//0x4fB085B8478584B10aF0b1b7401c6DcE38bFcA7d
 	t.Log("TestImportWalletFromMnemonic , ETHAddressLedger=", ETHAddressLedger)
 }
 
 func TestETHGenerateAddressFromPrivateKey(t *testing.T) {
 
-	privkey := "6B93D965D9981F9066CCC44B9DBF32B50F411C0DCEDF4A41CA4E7424ABDB6112"
+	privkey := "683a28a354be513d8e808e0f9d07ce217aaf18dad0ae855f51532a05b653ad0b"
 
-	//0x81FD1F7aE91041aAc5fCF7d8Ed3e1dd88Cc1359a
+	//0x4fB085B8478584B10aF0b1b7401c6DcE38bFcA7d
 	address, err := ETHW.GenerateAddressFromPrivateKey(privkey)
 	if err != nil {
 		t.Error("GenerateAddressFromPrivateKey err:", err)
@@ -38,7 +39,7 @@ func TestETHGenerateAddressFromPrivateKey(t *testing.T) {
 
 func TestETHExportPrivateKeyFromMnemonic(t *testing.T) {
 
-	mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
+	mnemonic := "tail merge cousin betray engage yard slab tube hobby shove settle legal"
 
 	ETHPrivateKey, err := ETHW.ExportPrivateKeyFromMnemonic(mnemonic, common.English)
 	if err != nil {
@@ -58,7 +59,7 @@ func TestETHExportPrivateKeyFromMnemonic(t *testing.T) {
 
 func TestCheckETHAddress(t *testing.T) {
 
-	ETHAddress := "0x96b4213eD85031b02A1bE101FfA3F82ee929285a"
+	ETHAddress := "0x4fB085B8478584B10aF0b1b7401c6DcE38bFcA7d"
 	isValid, err := ETHW.CheckAddress(ETHAddress)
 	if err != nil {
 		t.Error("CheckETHAddress err:", err)

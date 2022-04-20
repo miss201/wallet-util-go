@@ -17,7 +17,7 @@ type bsc struct {
 }
 
 func newBSC(key *Key) Wallet {
-	return &eth{
+	return &bsc{
 		name:   "Binance Smart Chain",
 		symbol: "BSC",
 		key:    key,

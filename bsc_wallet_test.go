@@ -7,7 +7,7 @@ import (
 
 func TestBSCGenerateAddressFromMnemonic(t *testing.T) {
 
-	mnemonic := "wreck bullet carpet nerve belt border often trust exchange believe defense rebel"
+	mnemonic := "tail merge cousin betray engage yard slab tube hobby shove settle legal"
 
 	BSCAddress, err := BSCW.GenerateAddressFromMnemonic(mnemonic, common.English)
 	if err != nil {
