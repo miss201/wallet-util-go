@@ -6,7 +6,6 @@ typedef struct CBaseString_Flag {
 	char *s;
 	int len;
 } CBaseString;
-
 typedef struct multiplyAccount_Flag {
 	CBaseString errorCode;
 	CBaseString errorMessage;

@@ -29,7 +29,7 @@ func TestMnemonicToAccount(t *testing.T) {
 }
 
 func TestGetAccountByPrivateKey(t *testing.T) {
-	privateKey := "KzMUwZ2rymHNK8os2ApFQQCbG5Vg5DYoJD16GPE88pJMhxuhQjHT"
+	privateKey := "683a28a354be513d8e808e0f9d07ce217aaf18dad0ae855f51532a05b653ad0b"
 	account := GetAccountByPrivateKey("ETH", privateKey)
 	fmt.Println("PublicKey==", account.PublicKey)
 	fmt.Println("PrivateKey==", account.PrivateKey)
