@@ -77,11 +77,11 @@ func GetAccountByPrivateKey(coinType string, privateKey string) *multiplyAccount
 	case "BTC":
 		account = BTCW.createAccountByPrivateKey(privateKey)
 	case "ETH":
-		account = ETHW.createAccountByMenmonic(privateKey)
+		account = ETHW.createAccountByPrivateKey(privateKey)
 	case "BSC":
-		account = BSCW.createAccountByMenmonic(privateKey)
+		account = BSCW.createAccountByPrivateKey(privateKey)
 	case "MATIC":
-		account = MATICW.createAccountByMenmonic(privateKey)
+		account = MATICW.createAccountByPrivateKey(privateKey)
 	}
 	return account
 }
