@@ -1,17 +1,34 @@
-//go:build ignore
-// +build ignore
-
 package main
 
+/*
+#include <stdlib.h>
+typedef struct CBaseString_Flag {
+	char *s;
+	int len;
+} CBaseString;
+
+typedef struct multiplyAccount_Flag {
+	CBaseString errorCode;
+	CBaseString errorMessage;
+	CBaseString address;
+	CBaseString privateKey;
+	CBaseString publicKey;
+	CBaseString mnemonic;
+} multiplyAccount;
+*/
+import "C"
+
 //账户结构体
-type multiplyAccount struct {
-	ErrorCode    string
-	ErrorMessage string
-	Address      string //地址
-	PrivateKey   string //私钥
-	PublicKey    string //公钥
-	Mnemonic     string //助记词，12个字组成，字与字之间使用空格间隔
-}
+//type multiplyAccount struct {
+//	ErrorCode    string
+//	ErrorMessage string
+//	Address      string //地址
+//	PrivateKey   string //私钥
+//	PublicKey    string //公钥
+//	Mnemonic     string //助记词，12个字组成，字与字之间使用空格间隔
+//}
+
+type multiplyAccount C.multiplyAccount
 
 /**
 *根据coinType创建对应币种的账户

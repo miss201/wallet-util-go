@@ -4,7 +4,7 @@
  * @Date: 2022/04/20 14:51
  */
 
-package wallet_util_go
+package main
 
 import (
 	"encoding/hex"

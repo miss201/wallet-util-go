@@ -1,4 +1,4 @@
-package wallet_util_go
+package main
 
 import (
 	"encoding/hex"
