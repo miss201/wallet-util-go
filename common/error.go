@@ -4,10 +4,10 @@ import "errors"
 
 //common errors
 var (
-	ERR_INVALID_ADDRESS       	= errors.New("Incorrect Address Format")
-	ERR_ADDRESS_LEN 		  	= errors.New("Address Len Invalid")
-	ERR_INVALID_PRIVATEKEY   	= errors.New("privateKey invalid")
-	ERR_INVALID_PRIVATEKEY_LEN  = errors.New("privateKey Len invalid")
+	ERR_INVALID_ADDRESS        = errors.New("Incorrect Address Format")
+	ERR_ADDRESS_LEN            = errors.New("Address Len Invalid")
+	ERR_INVALID_PRIVATEKEY     = errors.New("privateKey invalid")
+	ERR_INVALID_PRIVATEKEY_LEN = errors.New("privateKey Len invalid")
 )
 
 // WaykiChain errors
@@ -33,18 +33,16 @@ var (
 	ERR_COIN_TYPE        = errors.New("Coin type error")
 	ERR_USER_PUBLICKEY   = errors.New("PublicKey invalid")
 
-	ERR_ASK_PRICE   = errors.New("Ask Price invalid")
-	ERR_SIGNATURE_ERROR       = errors.New("Signature error")
-	ERR_SYMBOL_ERROR       = errors.New("Symbol Capital letter A-Z 6-7 digits [A_Z] error")
-	ERR_ASSET_NAME_ERROR       = errors.New("Asset Name error")
+	ERR_ASK_PRICE                = errors.New("Ask Price invalid")
+	ERR_SIGNATURE_ERROR          = errors.New("Signature error")
+	ERR_SYMBOL_ERROR             = errors.New("Symbol Capital letter A-Z 6-7 digits [A_Z] error")
+	ERR_ASSET_NAME_ERROR         = errors.New("Asset Name error")
 	ERR_TOTAl_SUPPLY_ERROR       = errors.New("Asset Total Supply error")
-	ERR_ASSET_UPDATE_TYPE_ERROR       = errors.New("Asset Update Type error")
-	ERR_ASSET_UPDATE_OWNER_ERROR       = errors.New("Asset Update Owner error")
+	ERR_ASSET_UPDATE_TYPE_ERROR  = errors.New("Asset Update Type error")
+	ERR_ASSET_UPDATE_OWNER_ERROR = errors.New("Asset Update Owner error")
 
-	ERR_PUBLICKEY_SIGNATURE_ERROR       = errors.New("The Length of PublicKey or Signature error")
+	ERR_PUBLICKEY_SIGNATURE_ERROR = errors.New("The Length of PublicKey or Signature error")
 )
 
 // ETH errors
-var (
-
-)
+var ()

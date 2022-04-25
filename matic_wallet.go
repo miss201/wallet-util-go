@@ -6,6 +6,7 @@
 
 package main
 
+import "C"
 import (
 	"encoding/hex"
 	"fmt"
@@ -105,19 +106,19 @@ func (MATICw *MATICWallet) GetPubKeyFromPrivateKey(privateKey string) (string, e
 	return hex.EncodeToString(publicKey.SerializeCompressed()), nil
 }
 
-func (MATICw *MATICWallet) createAccount() *multiplyAccount {
+func (MATICw *MATICWallet) createAccount() multiplyAccountGo {
 	menmonic, err := MATICw.wallet.GenerateMnemonic(12)
 	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
-		return &multiplyAccount{
+		return multiplyAccountGo{
 			ErrorCode:    "A0001",
 			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
 		}
 	}
-	return &multiplyAccount{
+	return multiplyAccountGo{
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
@@ -125,18 +126,18 @@ func (MATICw *MATICWallet) createAccount() *multiplyAccount {
 	}
 }
 
-func (MATICw *MATICWallet) createAccountByMenmonic(menmonic string) *multiplyAccount {
+func (MATICw *MATICWallet) createAccountByMenmonic(menmonic string) multiplyAccountGo {
 	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
-		return &multiplyAccount{
+		return multiplyAccountGo{
 			ErrorCode:    "M0001",
 			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
 		}
 	}
-	return &multiplyAccount{
+	return multiplyAccountGo{
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
@@ -144,17 +145,17 @@ func (MATICw *MATICWallet) createAccountByMenmonic(menmonic string) *multiplyAcc
 	}
 }
 
-func (MATICw *MATICWallet) createAccountByPrivateKey(privateKey string) *multiplyAccount {
+func (MATICw *MATICWallet) createAccountByPrivateKey(privateKey string) multiplyAccountGo {
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过私钥获取账号信息出错：%v\n", err)
-		return &multiplyAccount{
+		return multiplyAccountGo{
 			ErrorCode:    "M0001",
 			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
 		}
 	}
-	return &multiplyAccount{
+	return multiplyAccountGo{
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,

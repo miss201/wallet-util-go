@@ -9,7 +9,6 @@ func TestBTCGenerateAddressFromMnemonic(t *testing.T) {
 
 	mnemonic := "tail merge cousin betray engage yard slab tube hobby shove settle legal"
 	//mnemonic, _ := common.BTCW.GenerateMnemonic(12)
-
 	BTCAddress, err := BTCW.GenerateAddressFromMnemonic(mnemonic, common.English)
 	//BTCAddressSegwit, err := BTCSegwitW.GenerateAddressFromMnemonic(mnemonic, common.English)
 	//BTCAddressTestnet, err := BTCTestnetW.GenerateAddressFromMnemonic(mnemonic, common.English)

@@ -1,41 +1,70 @@
+//go:build ignore
+//+build ignore
+
 package main
 
 /*
 #include <stdlib.h>
+
 typedef struct CBaseString_Flag {
 	char *s;
 	int len;
 } CBaseString;
-typedef struct multiplyAccount_Flag {
-	CBaseString errorCode;
-	CBaseString errorMessage;
-	CBaseString address;
-	CBaseString privateKey;
-	CBaseString publicKey;
-	CBaseString mnemonic;
+
+typedef struct MultiplyAccount_Flag {
+	CBaseString ErrorCode;
+	CBaseString ErrorMessage;
+	CBaseString Address;
+	CBaseString PrivateKey;
+	CBaseString PublicKey;
+	CBaseString Mnemonic;
 } multiplyAccount;
 */
 import "C"
+import (
+	"log"
+	"unsafe"
+)
 
 //账户结构体
-//type multiplyAccount struct {
-//	ErrorCode    string
-//	ErrorMessage string
-//	Address      string //地址
-//	PrivateKey   string //私钥
-//	PublicKey    string //公钥
-//	Mnemonic     string //助记词，12个字组成，字与字之间使用空格间隔
-//}
+type multiplyAccountGo struct {
+	ErrorCode    string
+	ErrorMessage string
+	Address      string //地址
+	PrivateKey   string //私钥
+	PublicKey    string //公钥
+	Mnemonic     string //助记词，12个字组成，字与字之间使用空格间隔
+}
 
 type multiplyAccount C.multiplyAccount
 
-/**
-*根据coinType创建对应币种的账户
-*@coinType: BTC ETH BSC MATIC
- */
-func CreateAccount(coinType string) *multiplyAccount {
-	account := &multiplyAccount{}
-	switch coinType {
+//转换为CBaseString
+func toCBaseString(str string) C.CBaseString {
+	return C.CBaseString{
+		s:   (*C.char)(C.CString(str)),
+		len: C.int(len(str)),
+	}
+}
+
+//转换为C的multiplyAccount
+func go2CAccount(account multiplyAccountGo) multiplyAccount {
+	return multiplyAccount{
+		ErrorCode:    toCBaseString(account.ErrorCode),
+		ErrorMessage: toCBaseString(account.ErrorMessage),
+		Address:      toCBaseString(account.Address),
+		PrivateKey:   toCBaseString(account.PrivateKey),
+		PublicKey:    toCBaseString(account.PublicKey),
+		Mnemonic:     toCBaseString(account.Mnemonic),
+	}
+}
+
+//export CreateAccount
+// 根据coinType创建对应币种的账户
+// @coinType: BTC ETH BSC MATIC
+func CreateAccount(coinType *C.char) multiplyAccount {
+	aCoinType := C.GoString(coinType)
+	account := multiplyAccountGo{}
+	switch aCoinType {
 	case "BTC":
 		account = BTCW.createAccount()
 	case "ETH":
@@ -45,43 +74,83 @@ func CreateAccount(coinType string) *multiplyAccount {
 	case "MATIC":
 		account = MATICW.createAccount()
 	}
-	return account
+	return go2CAccount(account)
 }
 
-/**
-通过助记词恢复账户
-@coinType:BTC ETH BSC MATIC ...
-*/
-func MnemonicToAccount(coinType string, mnemonic string) *multiplyAccount {
-	account := &multiplyAccount{}
-	switch coinType {
+//export MnemonicToAccount
+// 通过助记词恢复账户
+// @coinType:BTC ETH BSC MATIC ...
+func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
+	aCoinType := C.GoString(coinType)
+	aMnemonic := C.GoString(mnemonic)
+	account := multiplyAccount{}
+	switch aCoinType {
 	case "BTC":
-		account = BTCW.createAccountByMenmonic(mnemonic)
+		account = BTCW.createAccountByMenmonic(aMnemonic)
 	case "ETH":
-		account = ETHW.createAccountByMenmonic(mnemonic)
+		account = ETHW.createAccountByMenmonic(aMnemonic)
 	case "BSC":
-		account = BSCW.createAccountByMenmonic(mnemonic)
+		account = BSCW.createAccountByMenmonic(aMnemonic)
 	case "MATIC":
-		account = MATICW.createAccountByMenmonic(mnemonic)
+		account = MATICW.createAccountByMenmonic(aMnemonic)
 	}
-	return account
+	return go2CAccount(account)
 }
 
-/**
-*通过私钥恢复账户
-*@coinType:BTC ETH BSC MATIC ...
- */
-func GetAccountByPrivateKey(coinType string, privateKey string) *multiplyAccount {
-	account := &multiplyAccount{}
-	switch coinType {
+//export GetAccountByPrivateKey
+// 通过私钥恢复账户
+// @coinType:BTC ETH BSC MATIC ...
+func GetAccountByPrivateKey(coinType *C.char, privateKey *C.char) multiplyAccount {
+	aCoinType := C.GoString(coinType)
+	aPrivateKey := C.GoString(privateKey)
+	account := multiplyAccount{}
+	switch aCoinType {
 	case "BTC":
-		account = BTCW.createAccountByPrivateKey(privateKey)
+		account = BTCW.createAccountByPrivateKey(aPrivateKey)
 	case "ETH":
-		account = ETHW.createAccountByPrivateKey(privateKey)
+		account = ETHW.createAccountByPrivateKey(aPrivateKey)
 	case "BSC":
-		account = BSCW.createAccountByPrivateKey(privateKey)
+		account = BSCW.createAccountByPrivateKey(aPrivateKey)
 	case "MATIC":
-		account = MATICW.createAccountByPrivateKey(privateKey)
+		account = MATICW.createAccountByPrivateKey(aPrivateKey)
 	}
-	return account
+	return go2CAccount(account)
+}
+
+//export FreeMultiplyAccount
+func FreeMultiplyAccount(result multiplyAccount) {
+	if result.ErrorCode.s != nil {
+		log.Printf("释放ErrorCode")
+		C.free(unsafe.Pointer(result.ErrorCode.s))
+		log.Printf("释放ErrorCode后：%v", result.ErrorCode.s)
+	}
+	if result.ErrorMessage.s != nil {
+		log.Printf("释放ErrorMessage\n")
+		C.free(unsafe.Pointer(result.ErrorMessage.s))
+		log.Printf("释放ErrorMessage后：%v\n", result.ErrorMessage.s)
+	}
+	if result.Address.s != nil {
+		log.Printf("释放Address\n")
+		C.free(unsafe.Pointer(result.Address.s))
+		log.Printf("释放Address后：%v\n", result.Address.s)
+	}
+	if result.PrivateKey.s != nil {
+		log.Printf("释放PrivateKey\n")
+		C.free(unsafe.Pointer(result.PrivateKey.s))
+		log.Printf("释放PrivateKey后：%v\n", result.PrivateKey.s)
+	}
+	if result.PublicKey.s != nil {
+		log.Printf("释放PublicKey\n")
+		C.free(unsafe.Pointer(result.PublicKey.s))
+		log.Printf("释放PublicKey后：%v\n", result.PublicKey.s)
+	}
+	if result.Mnemonic.s != nil {
+		log.Printf("释放Mnemonic\n")
+		C.free(unsafe.Pointer(result.Mnemonic.s))
+		log.Printf("释放Mnemonic后：%v\n", result.Mnemonic.s)
+	}
+}
+
+func main() {
+
 }

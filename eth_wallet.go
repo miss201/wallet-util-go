@@ -126,19 +126,19 @@ func (ETHw *ETHWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 	return hex.EncodeToString(publicKey.SerializeCompressed()), nil
 }
 
-func (ETHw *ETHWallet) createAccount() *multiplyAccount {
+func (ETHw *ETHWallet) createAccount() multiplyAccountGo {
 	menmonic, err := ETHw.wallet.GenerateMnemonic(12)
 	privateKey, err := ETHw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
 	publicKey, err := ETHw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := ETHw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
-		return &multiplyAccount{
+		return multiplyAccountGo{
 			ErrorCode:    "A0001",
 			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
 		}
 	}
-	return &multiplyAccount{
+	return multiplyAccountGo{
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
@@ -146,18 +146,18 @@ func (ETHw *ETHWallet) createAccount() *multiplyAccount {
 	}
 }
 
-func (ETHw *ETHWallet) createAccountByMenmonic(menmonic string) *multiplyAccount {
+func (ETHw *ETHWallet) createAccountByMenmonic(menmonic string) multiplyAccountGo {
 	privateKey, err := ETHw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
 	publicKey, err := ETHw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := ETHw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
-		return &multiplyAccount{
+		return multiplyAccountGo{
 			ErrorCode:    "M0001",
 			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
 		}
 	}
-	return &multiplyAccount{
+	return multiplyAccountGo{
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
@@ -165,17 +165,17 @@ func (ETHw *ETHWallet) createAccountByMenmonic(menmonic string) *multiplyAccount
 	}
 }
 
-func (ETHw *ETHWallet) createAccountByPrivateKey(privateKey string) *multiplyAccount {
+func (ETHw *ETHWallet) createAccountByPrivateKey(privateKey string) multiplyAccountGo {
 	publicKey, err := ETHw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := ETHw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过私钥获取账号信息出错：%v\n", err)
-		return &multiplyAccount{
+		return multiplyAccountGo{
 			ErrorCode:    "M0001",
 			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
 		}
 	}
-	return &multiplyAccount{
+	return multiplyAccountGo{
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,

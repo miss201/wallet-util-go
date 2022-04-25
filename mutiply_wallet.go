@@ -1,10 +1,17 @@
-//go:build ignore
-//+build ignore
-
 package main
 
 //账户结构体
-type multiplyAccount struct {
+//type multiplyAccount struct {
+//	ErrorCode    string
+//	ErrorMessage string
+//	Address      string //地址
+//	PrivateKey   string //私钥
+//	PublicKey    string //公钥
+//	Mnemonic     string //助记词，12个字组成，字与字之间使用空格间隔
+//}
+
+//账户结构体
+type multiplyAccountGo struct {
 	ErrorCode    string
 	ErrorMessage string
 	Address      string //地址
@@ -17,8 +24,8 @@ type multiplyAccount struct {
 *根据coinType创建对应币种的账户
 *@coinType: BTC ETH BSC MATIC
  */
-func CreateAccount(coinType string) *multiplyAccount {
-	account := &multiplyAccount{}
+func CreateAccount(coinType string) multiplyAccountGo {
+	account := multiplyAccountGo{}
 	switch coinType {
 	case "BTC":
 		account = BTCW.createAccount()
@@ -36,8 +43,8 @@ func CreateAccount(coinType string) *multiplyAccount {
 通过助记词恢复账户
 @coinType:BTC ETH BSC MATIC ...
 */
-func MnemonicToAccount(coinType string, mnemonic string) *multiplyAccount {
-	account := &multiplyAccount{}
+func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
+	account := multiplyAccountGo{}
 	switch coinType {
 	case "BTC":
 		account = BTCW.createAccountByMenmonic(mnemonic)
@@ -55,8 +62,8 @@ func MnemonicToAccount(coinType string, mnemonic string) *multiplyAccount {
 *通过私钥恢复账户
 *@coinType:BTC ETH BSC MATIC ...
  */
-func GetAccountByPrivateKey(coinType string, privateKey string) *multiplyAccount {
-	account := &multiplyAccount{}
+func GetAccountByPrivateKey(coinType string, privateKey string) multiplyAccountGo {
+	account := multiplyAccountGo{}
 	switch coinType {
 	case "BTC":
 		account = BTCW.createAccountByPrivateKey(privateKey)
