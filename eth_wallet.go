@@ -127,8 +127,8 @@ func (ETHw *ETHWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 }
 
 func (ETHw *ETHWallet) createAccount() multiplyAccountGo {
-	menmonic, err := ETHw.wallet.GenerateMnemonic(12)
-	privateKey, err := ETHw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	mnemonic, err := ETHw.wallet.GenerateMnemonic(12)
+	privateKey, err := ETHw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	publicKey, err := ETHw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := ETHw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -142,12 +142,12 @@ func (ETHw *ETHWallet) createAccount() multiplyAccountGo {
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 
-func (ETHw *ETHWallet) createAccountByMenmonic(menmonic string) multiplyAccountGo {
-	privateKey, err := ETHw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+func (ETHw *ETHWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
+	privateKey, err := ETHw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	publicKey, err := ETHw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := ETHw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -161,7 +161,7 @@ func (ETHw *ETHWallet) createAccountByMenmonic(menmonic string) multiplyAccountG
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 

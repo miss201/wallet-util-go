@@ -105,8 +105,8 @@ func (BTCw *BTCWallet) createAccount() multiplyAccountGo {
 	}
 }
 
-func (BTCw *BTCWallet) createAccountByMenmonic(menmonic string) multiplyAccountGo {
-	privateKey, err := BTCw.ExportPrivateKeyFromMnemonic(menmonic, common.English)
+func (BTCw *BTCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
+	privateKey, err := BTCw.ExportPrivateKeyFromMnemonic(mnemonic, common.English)
 	publicKey, err := BTCw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := BTCw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -120,7 +120,7 @@ func (BTCw *BTCWallet) createAccountByMenmonic(menmonic string) multiplyAccountG
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 

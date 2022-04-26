@@ -107,8 +107,8 @@ func (MATICw *MATICWallet) GetPubKeyFromPrivateKey(privateKey string) (string, e
 }
 
 func (MATICw *MATICWallet) createAccount() multiplyAccountGo {
-	menmonic, err := MATICw.wallet.GenerateMnemonic(12)
-	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	mnemonic, err := MATICw.wallet.GenerateMnemonic(12)
+	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -122,12 +122,12 @@ func (MATICw *MATICWallet) createAccount() multiplyAccountGo {
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 
-func (MATICw *MATICWallet) createAccountByMenmonic(menmonic string) multiplyAccountGo {
-	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+func (MATICw *MATICWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
+	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -141,7 +141,7 @@ func (MATICw *MATICWallet) createAccountByMenmonic(menmonic string) multiplyAcco
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 

@@ -47,13 +47,13 @@ func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 	account := multiplyAccountGo{}
 	switch coinType {
 	case "BTC":
-		account = BTCW.createAccountByMenmonic(mnemonic)
+		account = BTCW.createAccountByMnemonic(mnemonic)
 	case "ETH":
-		account = ETHW.createAccountByMenmonic(mnemonic)
+		account = ETHW.createAccountByMnemonic(mnemonic)
 	case "BSC":
-		account = BSCW.createAccountByMenmonic(mnemonic)
+		account = BSCW.createAccountByMnemonic(mnemonic)
 	case "MATIC":
-		account = MATICW.createAccountByMenmonic(mnemonic)
+		account = MATICW.createAccountByMnemonic(mnemonic)
 	}
 	return account
 }

@@ -102,8 +102,8 @@ func (BSCw *BSCWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 }
 
 func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
-	menmonic, err := BSCw.wallet.GenerateMnemonic(12)
-	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+	mnemonic, err := BSCw.wallet.GenerateMnemonic(12)
+	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -117,12 +117,12 @@ func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 
-func (BSCw *BSCWallet) createAccountByMenmonic(menmonic string) multiplyAccountGo {
-	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(menmonic, w_common.English)
+func (BSCw *BSCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
+	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
 	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
@@ -136,7 +136,7 @@ func (BSCw *BSCWallet) createAccountByMenmonic(menmonic string) multiplyAccountG
 		Address:    address,
 		PrivateKey: privateKey,
 		PublicKey:  publicKey,
-		Mnemonic:   menmonic,
+		Mnemonic:   mnemonic,
 	}
 }
 
