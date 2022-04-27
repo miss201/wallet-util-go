@@ -1,6 +1,3 @@
-//go:build ignore
-//+build ignore
-
 package main
 
 //账户结构体
