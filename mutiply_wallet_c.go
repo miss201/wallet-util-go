@@ -1,6 +1,3 @@
-//go:build ignore
-//+build ignore
-
 package main
 
 /*
@@ -83,7 +80,7 @@ func CreateAccount(coinType *C.char) multiplyAccount {
 func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	aMnemonic := C.GoString(mnemonic)
-	account := multiplyAccount{}
+	account := multiplyAccountGo{}
 	switch aCoinType {
 	case "BTC":
 		account = BTCW.createAccountByMnemonic(aMnemonic)
@@ -103,7 +100,7 @@ func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 func GetAccountByPrivateKey(coinType *C.char, privateKey *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	aPrivateKey := C.GoString(privateKey)
-	account := multiplyAccount{}
+	account := multiplyAccountGo{}
 	switch aCoinType {
 	case "BTC":
 		account = BTCW.createAccountByPrivateKey(aPrivateKey)

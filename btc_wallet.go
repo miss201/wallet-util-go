@@ -87,8 +87,29 @@ func (BTCw *BTCWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 
 func (BTCw *BTCWallet) createAccount() multiplyAccountGo {
 	mnemonic, err := BTCW.wallet.GenerateMnemonic(12)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
 	privateKey, err := BTCW.ExportPrivateKeyFromMnemonic(mnemonic, common.English)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
 	publicKey, err := BTCW.GetPubKeyFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
 	address, err := BTCW.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
@@ -107,7 +128,21 @@ func (BTCw *BTCWallet) createAccount() multiplyAccountGo {
 
 func (BTCw *BTCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
 	privateKey, err := BTCw.ExportPrivateKeyFromMnemonic(mnemonic, common.English)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
 	publicKey, err := BTCw.GetPubKeyFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
 	address, err := BTCw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
@@ -126,6 +161,13 @@ func (BTCw *BTCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountG
 
 func (BTCw *BTCWallet) createAccountByPrivateKey(privateKey string) multiplyAccountGo {
 	publicKey, err := BTCw.GetPubKeyFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过私钥获取账号信息出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
+		}
+	}
 	address, err := BTCw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过私钥获取账号信息出错：%v\n", err)

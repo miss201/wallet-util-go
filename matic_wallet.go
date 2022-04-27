@@ -108,8 +108,29 @@ func (MATICw *MATICWallet) GetPubKeyFromPrivateKey(privateKey string) (string, e
 
 func (MATICw *MATICWallet) createAccount() multiplyAccountGo {
 	mnemonic, err := MATICw.wallet.GenerateMnemonic(12)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
 	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("生成用户账户出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "A0001",
+			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
+		}
+	}
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
@@ -128,7 +149,21 @@ func (MATICw *MATICWallet) createAccount() multiplyAccountGo {
 
 func (MATICw *MATICWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
 	privateKey, err := MATICw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
 	publicKey, err := MATICw.GetPubKeyFromPrivateKey(privateKey)
+	if err != nil {
+		log.Printf("通过助记词获取账户信息出错：%v\n", err)
+		return multiplyAccountGo{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
+		}
+	}
 	address, err := MATICw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
