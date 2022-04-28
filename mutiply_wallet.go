@@ -22,7 +22,7 @@ type multiplyAccountGo struct {
 
 /**
 *根据coinType创建对应币种的账户
-*@coinType: BTC ETH BSC MATIC
+*@coinType: BTC ETH BSC MATIC SQL ...
  */
 func CreateAccount(coinType string) multiplyAccountGo {
 	account := multiplyAccountGo{}
@@ -35,13 +35,15 @@ func CreateAccount(coinType string) multiplyAccountGo {
 		account = BSCW.createAccount()
 	case "MATIC":
 		account = MATICW.createAccount()
+	case "SQL":
+		account = SQLW.createAccount()
 	}
 	return account
 }
 
 /**
 通过助记词恢复账户
-@coinType:BTC ETH BSC MATIC ...
+@coinType:BTC ETH BSC MATIC SQL ...
 */
 func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 	account := multiplyAccountGo{}
@@ -54,13 +56,15 @@ func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 		account = BSCW.createAccountByMnemonic(mnemonic)
 	case "MATIC":
 		account = MATICW.createAccountByMnemonic(mnemonic)
+	case "SQL":
+		account = SQLW.createAccountByMnemonic(mnemonic)
 	}
 	return account
 }
 
 /**
 *通过私钥恢复账户
-*@coinType:BTC ETH BSC MATIC ...
+*@coinType:BTC ETH BSC MATIC SQL ...
  */
 func GetAccountByPrivateKey(coinType string, privateKey string) multiplyAccountGo {
 	account := multiplyAccountGo{}
@@ -73,6 +77,8 @@ func GetAccountByPrivateKey(coinType string, privateKey string) multiplyAccountG
 		account = BSCW.createAccountByPrivateKey(privateKey)
 	case "MATIC":
 		account = MATICW.createAccountByPrivateKey(privateKey)
+	case "SQL":
+		account = SQLW.createAccountByPrivateKey(privateKey)
 	}
 	return account
 }

@@ -1,5 +1,5 @@
 //go:build ignore
-//+build ignore
+// +build ignore
 
 package main
 
@@ -60,7 +60,7 @@ func go2CAccount(account multiplyAccountGo) multiplyAccount {
 
 //export CreateAccount
 // 根据coinType创建对应币种的账户
-// @coinType: BTC ETH BSC MATIC
+// @coinType: BTC ETH BSC MATIC SQL ...
 func CreateAccount(coinType *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	account := multiplyAccountGo{}
@@ -69,17 +69,19 @@ func CreateAccount(coinType *C.char) multiplyAccount {
 		account = BTCW.createAccount()
 	case "ETH":
 		account = ETHW.createAccount()
-	case "BSC":
+	case "BSC": //币安
 		account = BSCW.createAccount()
 	case "MATIC":
 		account = MATICW.createAccount()
+	case "SQL":
+		account = SQLW.createAccount()
 	}
 	return go2CAccount(account)
 }
 
 //export MnemonicToAccount
 // 通过助记词恢复账户
-// @coinType:BTC ETH BSC MATIC ...
+// @coinType:BTC ETH BSC MATIC SQL ...
 func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	aMnemonic := C.GoString(mnemonic)
@@ -89,17 +91,19 @@ func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 		account = BTCW.createAccountByMnemonic(aMnemonic)
 	case "ETH":
 		account = ETHW.createAccountByMnemonic(aMnemonic)
-	case "BSC":
+	case "BSC": //币安
 		account = BSCW.createAccountByMnemonic(aMnemonic)
 	case "MATIC":
 		account = MATICW.createAccountByMnemonic(aMnemonic)
+	case "SQL":
+		account = SQLW.createAccountByMnemonic(aMnemonic)
 	}
 	return go2CAccount(account)
 }
 
 //export GetAccountByPrivateKey
 // 通过私钥恢复账户
-// @coinType:BTC ETH BSC MATIC ...
+// @coinType:BTC ETH BSC MATIC  SQL ...
 func GetAccountByPrivateKey(coinType *C.char, privateKey *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	aPrivateKey := C.GoString(privateKey)
@@ -109,10 +113,12 @@ func GetAccountByPrivateKey(coinType *C.char, privateKey *C.char) multiplyAccoun
 		account = BTCW.createAccountByPrivateKey(aPrivateKey)
 	case "ETH":
 		account = ETHW.createAccountByPrivateKey(aPrivateKey)
-	case "BSC":
+	case "BSC": //币安
 		account = BSCW.createAccountByPrivateKey(aPrivateKey)
 	case "MATIC":
 		account = MATICW.createAccountByPrivateKey(aPrivateKey)
+	case "SQL":
+		account = SQLW.createAccountByPrivateKey(aPrivateKey)
 	}
 	return go2CAccount(account)
 }
