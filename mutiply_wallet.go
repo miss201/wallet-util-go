@@ -1,3 +1,6 @@
+//go:build ignore
+// +build ignore
+
 package main
 
 //账户结构体
@@ -37,6 +40,8 @@ func CreateAccount(coinType string) multiplyAccountGo {
 		account = MATICW.createAccount()
 	case "SQL":
 		account = SQLW.createAccount()
+	case "LUNA":
+		account = TERRA.createAccount()
 	}
 	return account
 }
@@ -58,6 +63,8 @@ func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 		account = MATICW.createAccountByMnemonic(mnemonic)
 	case "SQL":
 		account = SQLW.createAccountByMnemonic(mnemonic)
+	case "LUNA":
+		account = TERRA.createAccountByMnemonic(mnemonic)
 	}
 	return account
 }
@@ -79,6 +86,8 @@ func GetAccountByPrivateKey(coinType string, privateKey string) multiplyAccountG
 		account = MATICW.createAccountByPrivateKey(privateKey)
 	case "SQL":
 		account = SQLW.createAccountByPrivateKey(privateKey)
+	case "LUNA":
+		account = TERRA.createAccountByPrivateKey(privateKey)
 	}
 	return account
 }

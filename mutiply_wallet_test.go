@@ -1,3 +1,6 @@
+//go:build ignore
+// +build ignore
+
 /**
  * @Author: He
  * @Description:
@@ -12,7 +15,7 @@ import (
 )
 
 func TestCreateAccount(t *testing.T) {
-	account := CreateAccount("SQL")
+	account := CreateAccount("LUNA")
 	fmt.Println("ErrorMessage==", account.ErrorMessage)
 	fmt.Println("ErrorCode==", account.ErrorCode)
 	fmt.Println("Mnemonic==", account.Mnemonic)     //worth crop scan company resemble latin dune potato ketchup enforce burden flavor
