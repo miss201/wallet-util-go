@@ -6,16 +6,14 @@ import (
 
 // init net params
 var (
-	BTCParams         = chaincfg.MainNetParams
-	BTCTestnetParams  = chaincfg.TestNet3Params
-	LTCParams         = chaincfg.MainNetParams
-	DOGEParams        = chaincfg.MainNetParams
-	DASHParams        = chaincfg.MainNetParams
-	BCHParams         = chaincfg.MainNetParams
-	QTUMParams        = chaincfg.MainNetParams
-	USDTParams        = chaincfg.MainNetParams
-	WICCParams        = chaincfg.MainNetParams
-	WICCTestnetParams = chaincfg.MainNetParams
+	BTCParams        = chaincfg.MainNetParams
+	BTCTestnetParams = chaincfg.TestNet3Params
+	LTCParams        = chaincfg.MainNetParams
+	DOGEParams       = chaincfg.MainNetParams
+	DASHParams       = chaincfg.MainNetParams
+	BCHParams        = chaincfg.MainNetParams
+	QTUMParams       = chaincfg.MainNetParams
+	USDTParams       = chaincfg.MainNetParams
 )
 
 func init() {
@@ -55,14 +53,4 @@ func init() {
 	USDTParams.PubKeyHashAddrID = 0x00 // 0
 	USDTParams.ScriptHashAddrID = 0x05 // 5
 	USDTParams.PrivateKeyID = 0x80     // 128
-
-	// wicc mainnet params
-	WICCParams.PubKeyHashAddrID = 0x49
-	WICCParams.ScriptHashAddrID = 0x05 // 1
-	WICCParams.PrivateKeyID = 0x99     // 128*/
-
-	// wicc testnet params
-	WICCTestnetParams.PubKeyHashAddrID = 0x87 // 1
-	WICCTestnetParams.ScriptHashAddrID = 0x05
-	WICCTestnetParams.PrivateKeyID = 0xd2 // 128*/
 }

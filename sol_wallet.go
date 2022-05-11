@@ -88,6 +88,13 @@ func (SOLw *SOLWallet) createAccountByMnemonic(mnemonic string) multiplyAccountG
 通过私钥返回账户
 */
 func (SQLw *SOLWallet) createAccountByPrivateKey(private string) multiplyAccountGo {
+	if private == "" || len(private) != 88 {
+		log.Printf("通过私钥获取账户信息出错，私钥长度不是88或者私钥为空")
+		return multiplyAccountGo{
+			ErrorCode:    "M0001",
+			ErrorMessage: fmt.Sprintf("通过私钥获取账户信息出错，私钥长度异常"),
+		}
+	}
 	//privateKey []byte通过base58转换出来的 ，因此这里要转换回去
 	outPrv := base58.Decode(private)
 

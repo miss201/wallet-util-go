@@ -88,7 +88,7 @@ func GenerateSeed(mnemonic, password, language string) ([]byte, error) {
 	return hdwallet.NewSeed(mnemonic, password, language)
 }
 
-// Generate address By Mnemonic for BTC/ETH/WICC ...
+// Generate address By Mnemonic for BTC/ETH ...
 func (w *Wallet) GenerateAddressFromMnemonic(mnemonic, language string) (string, error) {
 
 	//get master key
