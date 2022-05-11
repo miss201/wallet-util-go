@@ -38,7 +38,7 @@ const (
 	BTC_TESTNET = ZeroQuote + 1
 	DASH        = ZeroQuote + 5
 	ETH         = ZeroQuote + 60
-	BSC         = ZeroQuote + 60
+	BNB         = ZeroQuote + 60
 	MATIC       = ZeroQuote + 60
 
 	// btc token

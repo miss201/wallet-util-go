@@ -11,13 +11,13 @@ import (
 	"testing"
 )
 
-func TestNewSqlWallet(t *testing.T) {
-	sqlW := NewSqlWallet()
-	fmt.Println(sqlW)
+func TestNewSolWallet(t *testing.T) {
+	solW := NewSolWallet()
+	fmt.Println(solW)
 }
 
-func TestNewSqlWallet4(t *testing.T) {
-	account := SQLW.createAccount()
+func TestNewSolWallet4(t *testing.T) {
+	account := SOLW.createAccount()
 	fmt.Println("account.errorCode===", account.ErrorCode)
 	fmt.Println("account.errorMsg===", account.ErrorMessage)
 	fmt.Println("account.pri===", account.PrivateKey)    //535GqwYnWkaRLpBSWmGo164x1erjtc1UMc6crKSMjDvzgGDBvKqturmZECC36ex3CcD4uqe452dK2gahzzfVRtGi
@@ -25,8 +25,8 @@ func TestNewSqlWallet4(t *testing.T) {
 	fmt.Println("account.mnemonic===", account.Mnemonic) //swear army cement maze puppy want mystery bottom feed humble float oval
 }
 
-func TestNewSqlWallet2(t *testing.T) {
-	account := SQLW.createAccountByMnemonic("swear army cement maze puppy want mystery bottom feed humble float oval")
+func TestNewSolWallet2(t *testing.T) {
+	account := SOLW.createAccountByMnemonic("swear army cement maze puppy want mystery bottom feed humble float oval")
 	fmt.Println("account.errorCode===", account.ErrorCode)
 	fmt.Println("account.errorMsg===", account.ErrorMessage)
 	fmt.Println("account.pri===", account.PrivateKey) //535GqwYnWkaRLpBSWmGo164x1erjtc1UMc6crKSMjDvzgGDBvKqturmZECC36ex3CcD4uqe452dK2gahzzfVRtGi
@@ -34,8 +34,8 @@ func TestNewSqlWallet2(t *testing.T) {
 	fmt.Println("account.mnemonic===", account.Mnemonic)
 }
 
-func TestNewSqlWallet3(t *testing.T) {
-	account := SQLW.createAccountByPrivateKey("535GqwYnWkaRLpBSWmGo164x1erjtc1UMc6crKSMjDvzgGDBvKqturmZECC36ex3CcD4uqe452dK2gahzzfVRtGi")
+func TestNewSolWallet3(t *testing.T) {
+	account := SOLW.createAccountByPrivateKey("535GqwYnWkaRLpBSWmGo164x1erjtc1UMc6crKSMjDvzgGDBvKqturmZECC36ex3CcD4uqe452dK2gahzzfVRtGi")
 	fmt.Println("account.errorCode===", account.ErrorCode)
 	fmt.Println("account.errorMsg===", account.ErrorMessage)
 	fmt.Println("account.pri===", account.PrivateKey)

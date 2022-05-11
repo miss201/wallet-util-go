@@ -11,43 +11,43 @@ import (
 )
 
 var (
-	BSC = "BSC"
+	BNB = "BNB"
 
-	BSCW *BSCWallet
+	BNBW *BNBWallet
 )
 
 func init() {
-	BSCW = NewBSCWallet(BSC)
+	BNBW = NewBNBWallet(BNB)
 }
 
 //ETHWallet
-type BSCWallet struct {
+type BNBWallet struct {
 	wallet      *w_common.Wallet
 	mnemonicLen int
 }
 
-func NewBSCWallet(wc string) *BSCWallet {
-	newWallet := BSCWallet{}
+func NewBNBWallet(wc string) *BNBWallet {
+	newWallet := BNBWallet{}
 	switch wc {
-	case BSC:
-		newWallet = BSCWallet{
-			wallet:      w_common.NewWallet(w_common.BSC, false, false, nil),
+	case BNB:
+		newWallet = BNBWallet{
+			wallet:      w_common.NewWallet(w_common.BNB, false, false, nil),
 			mnemonicLen: 12,
 		}
 	default:
-		newWallet = BSCWallet{
-			wallet:      w_common.NewWallet(w_common.BSC, false, false, nil),
+		newWallet = BNBWallet{
+			wallet:      w_common.NewWallet(w_common.BNB, false, false, nil),
 			mnemonicLen: 12,
 		}
 	}
 	return &newWallet
 }
 
-func (BSCw *BSCWallet) GenerateAddressFromMnemonic(mnemonic, language string) (string, error) {
-	return BSCw.wallet.GenerateAddressFromMnemonic(mnemonic, language)
+func (BNBw *BNBWallet) GenerateAddressFromMnemonic(mnemonic, language string) (string, error) {
+	return BNBw.wallet.GenerateAddressFromMnemonic(mnemonic, language)
 }
 
-func (BSCw *BSCWallet) GenerateAddressFromPrivateKey(privateKey string) (string, error) {
+func (BNBw *BNBWallet) GenerateAddressFromPrivateKey(privateKey string) (string, error) {
 	privateKeyBytes, _ := hex.DecodeString(privateKey)
 	// (1) new  *PrivateKey、 *PublicKey
 	_, publicKey := ec.PrivKeyFromBytes(privateKeyBytes)
@@ -65,11 +65,11 @@ func (BSCw *BSCWallet) GenerateAddressFromPrivateKey(privateKey string) (string,
 	return address.Hex(), nil
 }
 
-func (BSCw *BSCWallet) ExportPrivateKeyFromMnemonic(mnemonic, language string) (string, error) {
-	return BSCw.wallet.ExportPrivateKeyFromMnemonic(mnemonic, language)
+func (BNBw *BNBWallet) ExportPrivateKeyFromMnemonic(mnemonic, language string) (string, error) {
+	return BNBw.wallet.ExportPrivateKeyFromMnemonic(mnemonic, language)
 }
 
-func (BSCw *BSCWallet) CheckPrivateKey(privateKey string) (bool, error) {
+func (BNBw *BNBWallet) CheckPrivateKey(privateKey string) (bool, error) {
 	//去掉0x（如有）
 	rm0xaddr := w_common.RemoveOxFromHex(privateKey)
 	//判断长度
@@ -84,9 +84,9 @@ func (BSCw *BSCWallet) CheckPrivateKey(privateKey string) (bool, error) {
 	return true, nil
 }
 
-func (BSCw *BSCWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error) {
+func (BNBw *BNBWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error) {
 
-	isValid, err := BSCw.CheckPrivateKey(privateKey)
+	isValid, err := BNBw.CheckPrivateKey(privateKey)
 	if isValid == false || err != nil {
 		return "", err
 	}
@@ -101,8 +101,8 @@ func (BSCw *BSCWallet) GetPubKeyFromPrivateKey(privateKey string) (string, error
 	return hex.EncodeToString(publicKey.SerializeCompressed()), nil
 }
 
-func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
-	mnemonic, err := BSCw.wallet.GenerateMnemonic(12)
+func (BNBw *BNBWallet) createAccount() multiplyAccountGo {
+	mnemonic, err := BNBw.wallet.GenerateMnemonic(12)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
 		return multiplyAccountGo{
@@ -110,7 +110,7 @@ func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
 			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
 		}
 	}
-	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
+	privateKey, err := BNBw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
 		return multiplyAccountGo{
@@ -118,7 +118,7 @@ func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
 			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
 		}
 	}
-	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
+	publicKey, err := BNBw.GetPubKeyFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
 		return multiplyAccountGo{
@@ -126,7 +126,7 @@ func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
 			ErrorMessage: fmt.Sprintf("生成用户出错:%v", err),
 		}
 	}
-	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
+	address, err := BNBw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
 		return multiplyAccountGo{
@@ -142,8 +142,8 @@ func (BSCw *BSCWallet) createAccount() multiplyAccountGo {
 	}
 }
 
-func (BSCw *BSCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
-	privateKey, err := BSCw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
+func (BNBw *BNBWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
+	privateKey, err := BNBw.ExportPrivateKeyFromMnemonic(mnemonic, w_common.English)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
 		return multiplyAccountGo{
@@ -151,7 +151,7 @@ func (BSCw *BSCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountG
 			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
 		}
 	}
-	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
+	publicKey, err := BNBw.GetPubKeyFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
 		return multiplyAccountGo{
@@ -159,7 +159,7 @@ func (BSCw *BSCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountG
 			ErrorMessage: fmt.Sprintf("通过助记词获取账户信息出错:%v", err),
 		}
 	}
-	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
+	address, err := BNBw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过助记词获取账户信息出错：%v\n", err)
 		return multiplyAccountGo{
@@ -175,8 +175,8 @@ func (BSCw *BSCWallet) createAccountByMnemonic(mnemonic string) multiplyAccountG
 	}
 }
 
-func (BSCw *BSCWallet) createAccountByPrivateKey(privateKey string) multiplyAccountGo {
-	publicKey, err := BSCw.GetPubKeyFromPrivateKey(privateKey)
+func (BNBw *BNBWallet) createAccountByPrivateKey(privateKey string) multiplyAccountGo {
+	publicKey, err := BNBw.GetPubKeyFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过私钥获取账号信息出错：%v\n", err)
 		return multiplyAccountGo{
@@ -184,7 +184,7 @@ func (BSCw *BSCWallet) createAccountByPrivateKey(privateKey string) multiplyAcco
 			ErrorMessage: fmt.Sprintf("通过私钥获取账号信息出错:%v", err),
 		}
 	}
-	address, err := BSCw.GenerateAddressFromPrivateKey(privateKey)
+	address, err := BNBw.GenerateAddressFromPrivateKey(privateKey)
 	if err != nil {
 		log.Printf("通过私钥获取账号信息出错：%v\n", err)
 		return multiplyAccountGo{

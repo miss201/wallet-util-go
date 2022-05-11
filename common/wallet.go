@@ -20,7 +20,7 @@ var (
 	ETHW              *Wallet
 	ETHLedgerW        *Wallet
 
-	BSCW *Wallet
+	BNBW *Wallet
 )
 
 func init() {
@@ -31,7 +31,7 @@ func init() {
 	ETHW = NewWallet(hdwallet.ETH, false, false, nil)
 	ETHLedgerW = NewWallet(hdwallet.ETH, false, true, nil)
 
-	BSCW = NewWallet(hdwallet.BSC, false, false, nil)
+	BNBW = NewWallet(hdwallet.BNB, false, false, nil)
 }
 
 type Wallet struct {

@@ -13,7 +13,7 @@ var (
 	QTUMParams       = chaincfg.MainNetParams
 	USDTParams       = chaincfg.MainNetParams
 
-	BSCParams = chaincfg.MainNetParams
+	BNBParams = chaincfg.MainNetParams
 )
 
 func init() {

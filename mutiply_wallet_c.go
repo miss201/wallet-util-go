@@ -57,7 +57,7 @@ func go2CAccount(account multiplyAccountGo) multiplyAccount {
 
 //export CreateAccount
 // 根据coinType创建对应币种的账户
-// @coinType: BTC ETH BSC MATIC SQL LUNA...
+// @coinType: BTC ETH BNB MATIC SOL LUNA...
 func CreateAccount(coinType *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	account := multiplyAccountGo{}
@@ -66,12 +66,12 @@ func CreateAccount(coinType *C.char) multiplyAccount {
 		account = BTCW.createAccount()
 	case "ETH":
 		account = ETHW.createAccount()
-	case "BSC": //币安
-		account = BSCW.createAccount()
+	case "BNB": //币安
+		account = BNBW.createAccount()
 	case "MATIC":
 		account = MATICW.createAccount()
-	case "SQL":
-		account = SQLW.createAccount()
+	case "SOL":
+		account = SOLW.createAccount()
 	case "LUNA":
 		account = TERRA.createAccount()
 	}
@@ -80,7 +80,7 @@ func CreateAccount(coinType *C.char) multiplyAccount {
 
 //export MnemonicToAccount
 // 通过助记词恢复账户
-// @coinType:BTC ETH BSC MATIC SQL LUNA...
+// @coinType:BTC ETH BNB MATIC SOL LUNA...
 func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	aMnemonic := C.GoString(mnemonic)
@@ -90,12 +90,12 @@ func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 		account = BTCW.createAccountByMnemonic(aMnemonic)
 	case "ETH":
 		account = ETHW.createAccountByMnemonic(aMnemonic)
-	case "BSC": //币安
-		account = BSCW.createAccountByMnemonic(aMnemonic)
+	case "BNB": //币安
+		account = BNBW.createAccountByMnemonic(aMnemonic)
 	case "MATIC":
 		account = MATICW.createAccountByMnemonic(aMnemonic)
-	case "SQL":
-		account = SQLW.createAccountByMnemonic(aMnemonic)
+	case "SOL":
+		account = SOLW.createAccountByMnemonic(aMnemonic)
 	case "LUNA":
 		account = TERRA.createAccountByMnemonic(aMnemonic)
 	}
@@ -104,7 +104,7 @@ func MnemonicToAccount(coinType *C.char, mnemonic *C.char) multiplyAccount {
 
 //export GetAccountByPrivateKey
 // 通过私钥恢复账户
-// @coinType:BTC ETH BSC MATIC  SQL LUNA...
+// @coinType:BTC ETH BNB MATIC  SOL LUNA...
 func GetAccountByPrivateKey(coinType *C.char, privateKey *C.char) multiplyAccount {
 	aCoinType := C.GoString(coinType)
 	aPrivateKey := C.GoString(privateKey)
@@ -114,12 +114,12 @@ func GetAccountByPrivateKey(coinType *C.char, privateKey *C.char) multiplyAccoun
 		account = BTCW.createAccountByPrivateKey(aPrivateKey)
 	case "ETH":
 		account = ETHW.createAccountByPrivateKey(aPrivateKey)
-	case "BSC": //币安
-		account = BSCW.createAccountByPrivateKey(aPrivateKey)
+	case "BNB": //币安
+		account = BNBW.createAccountByPrivateKey(aPrivateKey)
 	case "MATIC":
 		account = MATICW.createAccountByPrivateKey(aPrivateKey)
-	case "SQL":
-		account = SQLW.createAccountByPrivateKey(aPrivateKey)
+	case "SOL":
+		account = SOLW.createAccountByPrivateKey(aPrivateKey)
 	case "LUNA":
 		account = TERRA.createAccountByPrivateKey(aPrivateKey)
 	}

@@ -5,10 +5,10 @@ import (
 )
 
 func init() {
-	coins[BSC] = newBSC
+	coins[BNB] = newBNB
 }
 
-type bsc struct {
+type bnb struct {
 	name   string
 	symbol string
 	key    *Key
@@ -16,30 +16,30 @@ type bsc struct {
 	contract string
 }
 
-func newBSC(key *Key) Wallet {
-	return &bsc{
+func newBNB(key *Key) Wallet {
+	return &bnb{
 		name:   "Binance Smart Chain",
-		symbol: "BSC",
+		symbol: "BNB",
 		key:    key,
 	}
 }
 
-func (c *bsc) GetType() uint32 {
+func (c *bnb) GetType() uint32 {
 	return c.key.opt.CoinType
 }
 
-func (c *bsc) GetName() string {
+func (c *bnb) GetName() string {
 	return c.name
 }
 
-func (c *bsc) GetSymbol() string {
+func (c *bnb) GetSymbol() string {
 	return c.symbol
 }
 
-func (c *bsc) GetKey() *Key {
+func (c *bnb) GetKey() *Key {
 	return c.key
 }
 
-func (c *bsc) GetAddress() (string, error) {
+func (c *bnb) GetAddress() (string, error) {
 	return crypto.PubkeyToAddress(*c.key.PublicECDSA).Hex(), nil
 }

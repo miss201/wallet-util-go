@@ -16,26 +16,26 @@ import (
 	"log"
 )
 
-var SQLW *SQLWallet
+var SOLW *SOLWallet
 
 func init() {
-	SQLW = NewSqlWallet()
+	SOLW = NewSolWallet()
 }
 
 //solana钱包结构体，暂时为空，以后添加转账 签名等方法时候再来填充
-type SQLWallet struct{}
+type SOLWallet struct{}
 
 /**
 实例化solana钱包
 */
-func NewSqlWallet() *SQLWallet {
-	return &SQLWallet{}
+func NewSolWallet() *SOLWallet {
+	return &SOLWallet{}
 }
 
 /**
 创建solana钱包账户
 */
-func (SQLw *SQLWallet) createAccount() multiplyAccountGo {
+func (SOLw *SOLWallet) createAccount() multiplyAccountGo {
 	mnemonic, err := hdwallet.NewMnemonic(12)
 	if err != nil {
 		log.Printf("生成用户账户出错：%v\n", err)
@@ -44,13 +44,13 @@ func (SQLw *SQLWallet) createAccount() multiplyAccountGo {
 			ErrorMessage: fmt.Sprintf("生成用户账户出错:%v", err),
 		}
 	}
-	return SQLw.createAccountByMnemonic(mnemonic)
+	return SOLw.createAccountByMnemonic(mnemonic)
 }
 
 /**
 通过助记词返回账户
 */
-func (SQLw *SQLWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
+func (SOLw *SOLWallet) createAccountByMnemonic(mnemonic string) multiplyAccountGo {
 	var passPhrase []byte
 	seed := bip39.NewSeed(mnemonic, string(passPhrase))
 	derivationPath := "m/44'/501'/0'/0'"
@@ -87,7 +87,7 @@ func (SQLw *SQLWallet) createAccountByMnemonic(mnemonic string) multiplyAccountG
 /**
 通过私钥返回账户
 */
-func (SQLw *SQLWallet) createAccountByPrivateKey(private string) multiplyAccountGo {
+func (SQLw *SOLWallet) createAccountByPrivateKey(private string) multiplyAccountGo {
 	//privateKey []byte通过base58转换出来的 ，因此这里要转换回去
 	outPrv := base58.Decode(private)
 

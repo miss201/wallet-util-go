@@ -25,7 +25,7 @@ type multiplyAccountGo struct {
 
 /**
 *根据coinType创建对应币种的账户
-*@coinType: BTC ETH BSC MATIC SQL ...
+*@coinType: BTC ETH BNB MATIC SOL ...
  */
 func CreateAccount(coinType string) multiplyAccountGo {
 	account := multiplyAccountGo{}
@@ -34,12 +34,12 @@ func CreateAccount(coinType string) multiplyAccountGo {
 		account = BTCW.createAccount()
 	case "ETH":
 		account = ETHW.createAccount()
-	case "BSC":
-		account = BSCW.createAccount()
+	case "BNB":
+		account = BNBW.createAccount()
 	case "MATIC":
 		account = MATICW.createAccount()
-	case "SQL":
-		account = SQLW.createAccount()
+	case "SOL":
+		account = SOLW.createAccount()
 	case "LUNA":
 		account = TERRA.createAccount()
 	}
@@ -48,7 +48,7 @@ func CreateAccount(coinType string) multiplyAccountGo {
 
 /**
 通过助记词恢复账户
-@coinType:BTC ETH BSC MATIC SQL ...
+@coinType:BTC ETH BNB MATIC SOL ...
 */
 func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 	account := multiplyAccountGo{}
@@ -57,12 +57,12 @@ func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 		account = BTCW.createAccountByMnemonic(mnemonic)
 	case "ETH":
 		account = ETHW.createAccountByMnemonic(mnemonic)
-	case "BSC":
-		account = BSCW.createAccountByMnemonic(mnemonic)
+	case "BNB":
+		account = BNBW.createAccountByMnemonic(mnemonic)
 	case "MATIC":
 		account = MATICW.createAccountByMnemonic(mnemonic)
-	case "SQL":
-		account = SQLW.createAccountByMnemonic(mnemonic)
+	case "SOL":
+		account = SOLW.createAccountByMnemonic(mnemonic)
 	case "LUNA":
 		account = TERRA.createAccountByMnemonic(mnemonic)
 	}
@@ -71,7 +71,7 @@ func MnemonicToAccount(coinType string, mnemonic string) multiplyAccountGo {
 
 /**
 *通过私钥恢复账户
-*@coinType:BTC ETH BSC MATIC SQL ...
+*@coinType:BTC ETH BNB MATIC SOL ...
  */
 func GetAccountByPrivateKey(coinType string, privateKey string) multiplyAccountGo {
 	account := multiplyAccountGo{}
@@ -80,12 +80,12 @@ func GetAccountByPrivateKey(coinType string, privateKey string) multiplyAccountG
 		account = BTCW.createAccountByPrivateKey(privateKey)
 	case "ETH":
 		account = ETHW.createAccountByPrivateKey(privateKey)
-	case "BSC":
-		account = BSCW.createAccountByPrivateKey(privateKey)
+	case "BNB":
+		account = BNBW.createAccountByPrivateKey(privateKey)
 	case "MATIC":
 		account = MATICW.createAccountByPrivateKey(privateKey)
-	case "SQL":
-		account = SQLW.createAccountByPrivateKey(privateKey)
+	case "SOL":
+		account = SOLW.createAccountByPrivateKey(privateKey)
 	case "LUNA":
 		account = TERRA.createAccountByPrivateKey(privateKey)
 	}
